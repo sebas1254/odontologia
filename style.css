@@ -14,52 +14,53 @@
     --glass-bg: rgba(255, 255, 255, 0.9);
     --glass-border: rgba(255, 255, 255, 0.4);
     
-    /* Escala de Tamaños "MÁS GRANDE" para mayor legibilidad y presencia */
-    --font-size-base: 16px;  /* Base del documento */
-    --font-size-p: 1.1rem;    /* Párrafos contundentes */
-    --font-size-h2: 2.2rem;   /* Título MOOI impactante */
-    --font-size-h3: 1.6rem;   /* Títulos de sección claros */
-    --font-size-nav: 0.95rem; /* Texto de menú legible */
-    --font-size-btn: 1.1rem;  /* Botones con gran área de clic */
+    /* Escala de Tamaños para mayor legibilidad y presencia */
+    --font-size-base: 16px; 
+    --font-size-p: 1.05rem;   /* Ajustado para nueva altura */
+    --font-size-h2: 2.1rem;   /* Título MOOI impactante */
+    --font-size-h3: 1.5rem;   /* Títulos de sección claros */
+    --font-size-nav: 0.9rem;  /* Texto de menú legible */
+    --font-size-btn: 1.05rem; /* Botones con presencia */
 }
 
 /* ==========================================================================
-   2. ESTILOS BASE Y FONDO ANIMADO
+   2. ESTILOS BASE Y CENTRADO DEL BODY
    ========================================================================== */
 body {
     font-family: 'Poppins', sans-serif;
     font-size: var(--font-size-base);
     color: var(--text-dark);
-    /* Imagen de fondo sutil (asegúrate de tener flor.png) */
+    /* Fondo con flor sutil (asegúrate de tener flor.png) */
     background-image: url('flor.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #f0f0f0; /* Color de seguridad */
     margin: 0;
+    /* --- CLAVE PARA EL CENTRADO VERTICAL Y HORIZONTAL --- */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+    min-height: 100vh;       /* Altura completa de la pantalla */
     padding: 20px;
     box-sizing: border-box;
 }
 
 /* ==========================================================================
-   3. TARJETA PRINCIPAL (CARD) - CAMBIOS AQUÍ PARA CENTRAR
+   3. TARJETA PRINCIPAL (CARD) - AJUSTES PARA QUE SE VEA CENTRADA
    ========================================================================== */
 .card {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     width: 100%;
-    /* Ancho máximo aumentado para dar más aire */
-    max-width: 550px; 
+    /* Ancho máximo contundente */
+    max-width: 500px; /* Reducido ligeramente para mayor esbeltez */
     height: auto;
-    /* --- CAMBIO CLAVE: Reducimos la altura máxima para que se vea más contenida y centrada --- */
-    max-height: 80vh; /* Cambiado de 90vh a 80vh */
-    border-radius: 35px; /* Bordes redondeados premium */
-    box-shadow: 0 30px 60px rgba(0,0,0,0.15); /* Sombra contundente */
+    /* --- CAMBIO CLAVE: Limitamos la altura máxima para que "flote" y se vea centrada --- */
+    max-height: 75vh; /* Ocupa el 75% del alto de la pantalla, dejando aire arriba y abajo */
+    border-radius: 30px; /* Bordes redondeados premium */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15); /* Sombra elegante */
     overflow: hidden;
     border: 1px solid var(--glass-border);
     display: flex;
@@ -69,35 +70,35 @@ body {
     animation: cardEntrance 1s ease-out;
 }
 
-/* Ajuste de altura máxima para pantallas muy altas - También lo reducimos proporcionalmente */
-@media (min-height: 850px) {
-    .card { max-height: 700px; } /* Cambiado de 800px a 700px */
+/* Ajuste de altura máxima para pantallas muy altas */
+@media (min-height: 900px) {
+    .card { max-height: 680px; } /* Límite fijo en pantallas muy grandes */
 }
 
 /* Definición de la animación de entrada */
 @keyframes cardEntrance {
-    from { opacity: 0; transform: translateY(25px); }
+    from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 /* ==========================================================================
-   4. ENCABEZADO (HEADER) - PEQUEÑO AJUSTE DE ESPACIO
+   4. ENCABEZADO (HEADER) - AJUSTE DE PROPORCIONES
    ========================================================================== */
 .header {
     background-color: var(--secondary-dark); /* Negro profundo */
-    /* --- PEQUEÑO AJUSTE: Reducimos ligeramente el padding vertical para ajustar la proporción --- */
-    padding: 40px 30px 60px 30px; /* Reducido de 50px/70px a 40px/60px */
+    /* Padding ajustado para la nueva altura de la tarjeta */
+    padding: 35px 25px 50px 25px; 
     color: var(--text-light);
     text-align: center;
-    border-bottom: 5px solid var(--primary-gold); /* Borde dorado grueso */
+    border-bottom: 4px solid var(--primary-gold); /* Borde dorado */
     flex-shrink: 0;
 }
 
-/* Imagen del logo/diente */
+/* Imagen del logo */
 .diente-img {
-    width: 100px; /* Tamaño grande */
+    width: 90px; /* Tamaño equilibrado */
     height: auto;
-    margin-bottom: 15px; /* Reducido ligeramente */
+    margin-bottom: 15px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -106,30 +107,31 @@ body {
 /* Título MOOI */
 .header h2 {
     font-size: var(--font-size-h2);
-    margin: 0 0 8px 0;
+    margin: 0 0 5px 0;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
-/* Subtítulo y Nombre de la Dra. */
+/* Subtítulo */
 .header p {
     margin: 0;
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 2.5px;
+    letter-spacing: 2px;
     color: var(--primary-gold);
     font-weight: 500;
 }
 
-/* Estilo específico para el nombre de la Dra. (corregido del HTML) */
+/* Estilo para el nombre de la Dra. */
 .dr-name {
     text-align: center;
-    line-height: 1.6;
+    line-height: 1.4;
     color: #fcf6f6;
-    font-size: 0.95rem;
-    margin-top: 10px;
+    font-size: 0.9rem;
+    margin-top: 8px;
     text-transform: none; /* No mayúsculas */
     letter-spacing: 0.5px;
+    font-weight: 300;
 }
 
 /* ==========================================================================
@@ -139,11 +141,11 @@ body {
     display: flex;
     justify-content: space-between;
     background: rgba(255, 255, 255, 0.98);
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
     /* Margen negativo superior para "flotar" sobre el header */
-    margin: -40px 30px 20px 30px; 
-    padding: 12px;
+    margin: -30px 20px 15px 20px; 
+    padding: 10px;
     z-index: 10;
     flex-shrink: 0;
 }
@@ -158,15 +160,15 @@ body {
     align-items: center;
     justify-content: center;
     flex: 1;
-    padding: 15px 8px; /* Espaciado cómodo */
-    border-radius: 20px;
+    padding: 12px 5px; /* Espaciado cómodo */
+    border-radius: 15px;
     text-align: center;
 }
 
 /* Iconos del menú */
 .nav-item i {
-    font-size: 1.4rem;
-    margin-bottom: 6px;
+    font-size: 1.3rem;
+    margin-bottom: 4px;
 }
 
 /* Estado Hover (no activo) */
@@ -179,7 +181,7 @@ body {
 .nav-item.active {
     color: var(--text-light);
     background-color: var(--secondary-dark);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 .nav-item.active i {
@@ -192,19 +194,19 @@ body {
 .content-container {
     flex: 1; /* Ocupa el espacio restante */
     overflow-y: auto; /* Scroll interno si el contenido es largo */
-    padding: 20px 40px 30px 40px; /* Padding lateral amplio */
+    padding: 10px 30px 20px 30px; /* Padding ajustado */
     scroll-behavior: smooth;
 }
 
 /* Estilos de la barra de scroll interna */
 .content-container::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
 }
 .content-container::-webkit-scrollbar-track {
     background: rgba(0,0,0,0.02);
 }
 .content-container::-webkit-scrollbar-thumb {
-    background: rgba(201, 160, 99, 0.3);
+    background: rgba(201, 160, 99, 0.25);
     border-radius: 10px;
 }
 
@@ -221,10 +223,10 @@ body {
 /* Párrafos de sección */
 .content-section p {
     font-size: var(--font-size-p);
-    line-height: 1.7; /* Más interlineado para lectura */
+    line-height: 1.6;
     text-align: center;
     color: #555;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 /* Títulos de sección */
@@ -232,7 +234,7 @@ body {
     color: var(--secondary-dark);
     font-size: var(--font-size-h3);
     font-weight: 600;
-    margin: 15px 0 25px 0;
+    margin: 10px 0 20px 0;
     text-align: center;
     position: relative;
 }
@@ -241,10 +243,10 @@ body {
 .content-section h3::after {
     content: '';
     display: block;
-    width: 45px;
-    height: 4px;
+    width: 40px;
+    height: 3px;
     background-color: var(--primary-gold);
-    margin: 10px auto 0 auto;
+    margin: 8px auto 0 auto;
     border-radius: 2px;
 }
 
@@ -261,9 +263,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 18px; /* Más alto para mayor presencia */
-    margin: 15px 0;
-    border-radius: 18px;
+    padding: 16px; /* Ajustado */
+    margin: 12px 0;
+    border-radius: 15px;
     text-decoration: none;
     color: white;
     font-weight: 600;
@@ -276,12 +278,12 @@ body {
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 /* Iconos dentro de botones */
-.btn i { margin-right: 12px; font-size: 1.3rem; }
+.btn i { margin-right: 10px; font-size: 1.2rem; }
 
 /* Botón WhatsApp */
 .whatsapp { 
@@ -299,42 +301,42 @@ body {
 }
 
 /* ==========================================================================
-   8. GRID DE SERVICIOS Y CARDS
+   8. GRID DE SERVICIOS Y CARDS (Actualizado)
    ========================================================================== */
 .services-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Dos columnas */
-    gap: 15px; /* Espacio entre cards */
-    margin-top: 20px;
+    gap: 12px; /* Espacio ajustado */
+    margin-top: 15px;
 }
 
 .service-card {
     background: rgba(255, 255, 255, 0.7);
-    padding: 20px 15px; /* Más padding interno */
-    border-radius: 20px;
+    padding: 15px 10px; /* Ajustado */
+    border-radius: 18px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* Ajuste de altura mínima para servicios con texto largo */
-    min-height: 140px; 
+    /* Altura mínima para mantener consistencia */
+    min-height: 120px; 
 }
 
-/* Estilo para los iconos dorados dentro de Servicios */
+/* Estilo para los iconos dorados dentro de Servicios (FA y BI) */
 .service-card i {
-    color: var(--primary-gold); /* Dorado principal */
-    font-size: 2.2rem; /* Tamaño grande y "nice" */
-    margin-bottom: 10px; /* Espacio con el texto */
-    display: block; /* Asegura que ocupe su propia línea */
+    color: var(--primary-gold);
+    font-size: 1.9rem; /* Ajustado */
+    margin-bottom: 8px;
+    display: block;
 }
 
 /* Texto del servicio */
 .service-card span {
-    font-size: 0.95rem;
+    font-size: 0.85rem; /* Ajustado */
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.3;
     color: var(--secondary-dark);
 }
 
@@ -342,27 +344,27 @@ body {
    9. SECCIÓN DE CONTACTO (Ajustes extra)
    ========================================================================== */
 .social-connect {
-    margin-top: 30px;
+    margin-top: 25px;
     text-align: center;
 }
 
 .social-connect p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #999;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .social-btns {
     display: flex;
-    gap: 15px;
+    gap: 12px;
 }
 
 .social-btns .btn {
     margin: 0;
     flex: 1;
-    padding: 15px;
+    padding: 14px;
 }
 
 /* ==========================================================================
@@ -370,10 +372,10 @@ body {
    ========================================================================== */
 .footer {
     text-align: center;
-    padding: 15px;
-    font-size: 0.8rem;
+    padding: 12px;
+    font-size: 0.75rem;
     color: #888;
     background: rgba(0,0,0,0.02);
-    border-top: 1px solid rgba(0,0,0,0.04);
+    border-top: 1px solid rgba(0,0,0,0.03);
     flex-shrink: 0;
 }
