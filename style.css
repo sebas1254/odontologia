@@ -46,7 +46,7 @@ body {
 }
 
 /* ==========================================================================
-   3. TARJETA PRINCIPAL (CARD)
+   3. TARJETA PRINCIPAL (CARD) - CAMBIOS AQUÍ PARA CENTRAR
    ========================================================================== */
 .card {
     background: var(--glass-bg);
@@ -56,8 +56,8 @@ body {
     /* Ancho máximo aumentado para dar más aire */
     max-width: 550px; 
     height: auto;
-    /* Evita que la tarjeta se corte en pantallas pequeñas */
-    max-height: 90vh; 
+    /* --- CAMBIO CLAVE: Reducimos la altura máxima para que se vea más contenida y centrada --- */
+    max-height: 80vh; /* Cambiado de 90vh a 80vh */
     border-radius: 35px; /* Bordes redondeados premium */
     box-shadow: 0 30px 60px rgba(0,0,0,0.15); /* Sombra contundente */
     overflow: hidden;
@@ -69,9 +69,9 @@ body {
     animation: cardEntrance 1s ease-out;
 }
 
-/* Ajuste de altura máxima para pantallas muy altas */
+/* Ajuste de altura máxima para pantallas muy altas - También lo reducimos proporcionalmente */
 @media (min-height: 850px) {
-    .card { max-height: 800px; }
+    .card { max-height: 700px; } /* Cambiado de 800px a 700px */
 }
 
 /* Definición de la animación de entrada */
@@ -81,11 +81,12 @@ body {
 }
 
 /* ==========================================================================
-   4. ENCABEZADO (HEADER)
+   4. ENCABEZADO (HEADER) - PEQUEÑO AJUSTE DE ESPACIO
    ========================================================================== */
 .header {
     background-color: var(--secondary-dark); /* Negro profundo */
-    padding: 50px 30px 70px 30px; /* Padding generoso */
+    /* --- PEQUEÑO AJUSTE: Reducimos ligeramente el padding vertical para ajustar la proporción --- */
+    padding: 40px 30px 60px 30px; /* Reducido de 50px/70px a 40px/60px */
     color: var(--text-light);
     text-align: center;
     border-bottom: 5px solid var(--primary-gold); /* Borde dorado grueso */
@@ -96,7 +97,7 @@ body {
 .diente-img {
     width: 100px; /* Tamaño grande */
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reducido ligeramente */
     display: block;
     margin-left: auto;
     margin-right: auto;
